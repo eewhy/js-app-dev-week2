@@ -44,17 +44,23 @@ var playRound = function(player1,player2){
     player1Pick == 'paper' && player2Pick == 'rock'
     ){
     player1Score++;
-    return console.log(player1.name + ' is the winner!');
+    return console.log(player1.name + ' win!');
   }else {
     player2Score++;
-    return console.log(player2.name + ' is the winner!');
+    return console.log(player2.name + ' win!');
   }
 };
 
 var playGame = function(player1,player2,playUntil) {
-     while(player1Score <= playUntil || player2Score <= playUntil){
+     while(player1Score <= playUntil && player2Score <= playUntil){
         playRound(player1,player2);
      }
 };
 
 playGame(ey,julie,5);
+
+if(player1Score > player2Score){
+  return console.log( player1.name +' is the winner!');
+} else{
+  return console.log( player2.name +' is the winner!');
+}
